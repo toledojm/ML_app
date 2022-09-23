@@ -40,7 +40,7 @@ def classifier(clasificador):
 
 col1,col2,col3=st.columns(3)
 
-flecha=Image,open('flecha.png')
+flecha=Image.open('flecha.png')
 
 if st.button('clasifique por favor'):
     clase=int(classifier(clasificador))
