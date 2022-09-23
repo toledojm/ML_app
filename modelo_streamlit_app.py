@@ -48,8 +48,6 @@ if st.button('clasifique por favor'):
         col1.image(flecha)
     elif clase==1:
         col2.image(flecha)
-    elif clase==3:
-        col3.image(flecha)
     else:
         pass
 else:
