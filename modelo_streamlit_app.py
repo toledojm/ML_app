@@ -30,10 +30,10 @@ with st.sidebar:
 def classifier(clasificador):
     if clasificador=='Árbol de decisión':
         tree_classifier=load('clf_dtc_model.py')
-        resultado=tree_classifier.predict([sepal_length,sepal_width,petal_length,petal_width])
+        resultado=tree_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
     elif clasificador=='K vecinos':
         knn_classifier=load('clf_knn_model.py')
-        resultado=knn_classifier.predict([sepal_length,sepal_width,petal_length,petal_width])
+        resultado=knn_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
     else:
         resultado=None
     return resultado
