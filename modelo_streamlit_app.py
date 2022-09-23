@@ -8,7 +8,7 @@ import streamlit as st
 st.set_page_config(page_title="streamlit", layout="wide")
 
 primaryColor="#F63366"
-backgroundColor="#FFFFFF"
+backgroundColor="#b5b5b5"
 texColor="#F0F2F6"
 font="sans serif"
 
@@ -19,7 +19,7 @@ image=Image.open('iris.jpg')
 st.image(image)
 
 with st.sidebar:
-    clasificador =st.selectbox(label='clasificador', options=('Decision tree calssifier', 'k-nn'))
+    clasificador =st.selectbox(label='clasificador', options=('Árbol de decisión', 'K vecinos'))
     st.markdown("<br></br>",unsafe_allow_html=True)
 
     sepal_length=st.slider(label='sepal length (cm):',min_value=2.0,max_value=9.0,step=0.05)
@@ -28,10 +28,10 @@ with st.sidebar:
     petal_width=st.slider(label='petal width (cm):',min_value=0.0,max_value=8.0,step=0.05)
     
 def classifier(clasificador):
-    if clasificador=='Decision tree calssifier':
+    if clasificador=='Árbol de decisión':
         tree_classifier=load('clf_dtc_model.py')
         resultado=tree_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
-    elif clasificador=='k-nn':
+    elif clasificador=='K vecinos':
         knn_classifier=load('clf_knn_model.py')
         resultado=knn_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
     else:
