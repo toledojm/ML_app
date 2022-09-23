@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from joblib import dump,load
 import streamlit as st
-
+from sklearn import *
 
 st.set_page_config(page_title="streamlit", layout="wide")
 
