@@ -35,7 +35,7 @@ def classifier(clasificador):
         knn_classifier=load('clf_knn_model.py')
         resultado=knn_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
     elif clasificador=='svc':
-        knn_classifier=load('clf_svc.py')
+        knn_classifier=load('clf_svc_model.py')
         resultado=knn_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
     elif clasificador=='hgbc':
         knn_classifier=load('clf_hgbc_model.py')
