@@ -19,7 +19,7 @@ image=Image.open('iris.jpg')
 st.image(image)
 
 with st.sidebar:
-    clasificador =st.selectbox(label='clasificador', options=('Árbol de decisión', 'K vecinos'))
+    clasificador =st.selectbox(label='clasificador', options=('Árbol de decisión', 'K vecinos', 'svc', 'hgbc'))
     st.markdown("<br></br>",unsafe_allow_html=True)
 
     sepal_length=st.slider(label='sepal length (cm):',min_value=2.0,max_value=9.0,step=0.05)
@@ -34,6 +34,12 @@ def classifier(clasificador):
     elif clasificador=='K vecinos':
         knn_classifier=load('clf_knn_model.py')
         resultado=knn_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
+    elif clasificador=='svc':
+        knn_classifier=load('clf_svc.py')
+        resultado=knn_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
+    elif clasificador=='hgbc':
+        knn_classifier=load('clf_hgbc_model.py')
+        resultado=knn_classifier.predict([[sepal_length,sepal_width,petal_length,petal_width]])
     else:
         resultado=None
     return resultado
@@ -47,6 +53,8 @@ if st.button('clasifique por favor'):
     if clase==0:
         col1.image(flecha)
     elif clase==1:
+        col2.image(flecha)
+    elif clase==2:
         col2.image(flecha)
     else:
         pass
